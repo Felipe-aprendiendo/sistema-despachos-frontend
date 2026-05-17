@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  frontend:
+    image: 850656380173.dkr.ecr.us-east-1.amazonaws.com/sistema-despachos-frontend:latest
+    container_name: despachos-frontend
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    networks:
+      - frontend-network
+
+networks:
+  frontend-network:
+    driver: bridge
+
